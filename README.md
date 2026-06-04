@@ -16,10 +16,10 @@
 **Состав проекта**
 
 ```C++
-   - bool checkPrime(uint64_t value) - проверка числа на простоту.
-   - uint64_t nPrime(uint64_t n) - нахождение n-ого простого числа (в ряду).
-   - uint64_t nextPrime(uint64_t value) - нахождение ближайшего следующего простого числа к value.
-   - uint64_t sumPrime(uint64_t hbound) - сумма всех чисел до hbound (не включая его)
+   - bool checkPrim(uint64_t value) - проверка числа на простоту.
+   - uint64_t nPrim(uint64_t n) - нахождение n-ого простого числа (в ряду).
+   - uint64_t nextPrim(uint64_t value) - нахождение ближайшего следующего простого числа к value.
+   - uint64_t sumPrim(uint64_t hbound) - сумма всех чисел до hbound (не включая его)
  ```
 
 
@@ -32,7 +32,7 @@
 
 
 ```C++
-bool checkPrime(uint64_t value) {
+bool checkPrim(uint64_t value) {
 
 }
 ```
@@ -43,7 +43,7 @@ bool checkPrime(uint64_t value) {
 
 
 ```C++
-uint64_t nPrime(uint64_t n) {
+uint64_t nPrim(uint64_t n) {
 
 }
 ```
@@ -53,7 +53,7 @@ uint64_t nPrime(uint64_t n) {
 Функция возвращает найденное простое число.
 
 ```C++
-uint64_t nextPrime(uint64_t value) {
+uint64_t nextPrim(uint64_t value) {
 
 }
 ```
@@ -63,7 +63,7 @@ uint64_t nextPrime(uint64_t value) {
 Функция возвращает найденное простое число.
 
 ```C++
-uint64_t sumPrime(uint64_t hbound) {
+uint64_t sumPrim(uint64_t hbound) {
    
 }
 ```

@@ -13,13 +13,13 @@ bool checkPrim(uint64_t val) {
     return true;
 }
 
-uint64_t nPrime(uint64_t x) {
+uint64_t nPrim(uint64_t x) {
     if (x == 0) return 0;
     if (x == 1) return 2;
     uint64_t count = 1;
     uint64_t candidat = 3;
     while (count < x) {
-        if (checkPrime(candidat)) {
+        if (checkPrim(candidat)) {
             count++;
         }
         if (count < x) {
@@ -29,19 +29,19 @@ uint64_t nPrime(uint64_t x) {
     return candidat;
 }
 
-uint64_t nextPrime(uint64_t valu) {
+uint64_t nextPrim(uint64_t valu) {
     uint64_t candidat = valu + 1;
     if (candidat <= 2) return 2;
-    while (!checkPrime(candidat)) {
+    while (!checkPrim(candidat)) {
         candidat++;
     }
     return candidat;
 }
 
-uint64_t sumPrime(uint64_t bound) {
+uint64_t sumPrim(uint64_t bound) {
     uint64_t summ = 0;
     for (uint64_t i = 2; i < bound; i++) {
-        if (checkPrime(i)) {
+        if (checkPrim(i)) {
             summ += i;
         }
     }
