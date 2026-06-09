@@ -4,11 +4,14 @@
 #include "alg.h"
 
 bool checkPrim(uint64_t val) {
-    if (val <= 1) return false;
+    if (val < 2) return false;
     if (val == 2) return true;
-    if (val % 2 == 0) return false;
-    for (uint64_t i = 3; i * i <= val; i += 2) {
-        if (val % i == 0) return false;
+    if ((val & 1) == 0) return false;
+    
+    uint64_t d = 3;
+    while (d * d <= val) {
+        if (val % d == 0) return false;
+        d += 2;
     }
     return true;
 }
@@ -16,34 +19,36 @@ bool checkPrim(uint64_t val) {
 uint64_t nPrim(uint64_t x) {
     if (x == 0) return 0;
     if (x == 1) return 2;
-    uint64_t count = 1;
-    uint64_t candidat = 3;
-    while (count < x) {
-        if (checkPrim(candidat)) {
-            count++;
+    
+    uint64_t found = 1;
+    uint64_t num = 3;
+    
+    while (found < x) {
+        if (checkPrim(num)) {
+            found++;
         }
-        if (count < x) {
-            candidat += 2;
+        if (found < x) {
+            num += 2;
         }
     }
-    return candidat;
+    return num;
 }
 
 uint64_t nextPrim(uint64_t valu) {
-    uint64_t candidat = valu + 1;
-    if (candidat <= 2) return 2;
-    while (!checkPrim(candidat)) {
-        candidat++;
+    uint64_t next = valu + 1;
+    if (next <= 2) return 2;
+    while (!checkPrim(next)) {
+        next++;
     }
-    return candidat;
+    return next;
 }
 
 uint64_t sumPrim(uint64_t bound) {
-    uint64_t summ = 0;
-    for (uint64_t i = 2; i < bound; i++) {
-        if (checkPrim(i)) {
-            summ += i;
+    uint64_t total = 0;
+    for (uint64_t n = 2; n < bound; n++) {
+        if (checkPrim(n)) {
+            total += n;
         }
     }
-    return summ;
+    return total;
 }
